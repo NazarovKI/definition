@@ -4,92 +4,214 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Урок 16. Подвиг: как узнать героя?</title>
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./dist/reset.css" />
-    <link rel="stylesheet" href="./dist/reveal.css" />
-    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
-    <link rel="stylesheet" href="./css/highlight/base16/zenburn.css" />
+    <title>Семья в современном мире (практическое занятие)</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
 
 
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template">### **Равнение на героя**
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<aside class="notes"><p>Тема нашего разговора, с одной стороны, простая, но, с другой стороны, в ней очень много таких моментов, которые необходимо внимательно рассмотреть. И все потому, что правильное понимание этих вопросов помогает построить свою жизнь гармонично и слажено.</p>
-</aside></script></section><section  data-markdown><script type="text/template">
-![](https://clever-lab.pro/pluginfile.php/66053/mod_glossary/entry/149/lori-0028132601-bigwww.jpg)  
+# Урок 16. Семья в современном мире
+</div>
 
-<aside class="notes"><p>Начнем с того, что каждый человек нуждается в каком-то примере для подражания. <strong>Мы никогда не живем сами по себе и всегда ориентируемся на кого-то или на что-то</strong>, всегда имеем перед собой картинку того, каким должен быть окружающий мир и как себя вести в той или иной ситуации. Роль такой «картинки» чаще всего играют люди, которые своими действиями и поступками формируют в уме список правильного и неправильного, дозволенного и запретного.</p>
-</aside></script></section><section  data-markdown><script type="text/template">Герои — люди, совершающие незаурядные поступки и, как правило, обладающие особенными, выдающимися способностями — и были испокон веков такими ориентирами. 
+<aside class="notes"><p><strong>У тебя есть миссия!</strong>
+Сегодня тебе предстоит научиться рассказывать о своей семье. Но перед началом этой работы (а она будет действительно непростой) мы с тобой поговорим о некоторых вещах, которые обычно упускаются из виду, но, тем не менее, от этого они не перестают быть очень важными в жизни каждого из нас.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<aside class="notes"><p>Но при этом само понятие героизма прошло несколько стадий своего развития. Это развитие началось в глубокой древности, в эпоху, о которой повествуют мифы и сказания. Герои той далекой эпохи — почти сплошь выдуманные персонажи. Их выдумывали для того, чтобы людям можно было перенимать чей-то пример и знать, как вести себя в той или иной ситуации.</p>
-</aside></script></section><section  data-markdown><script type="text/template">![](https://clever-lab.pro/pluginfile.php/66053/mod_glossary/entry/149/lori-0029439140-bigwww.jpg)  
+<img src="https://clever-lab.pro/pluginfile.php/66051/mod_glossary/entry/148/lori-0036756162-bigwww.jpg" alt="" style="object-fit: scale-down">
+</div>
 
-<aside class="notes"><p>Ученые, считают, что истории о Геракле появились  из желания древних людей вдохновить себя на борьбу со стихийными силами природы. «Ведь если Геракл смог победить их, то и мы как-нибудь тоже с ними справимся», — так рассуждали наши предки. Слушая сказания о славных героях, человек загорался желанием совершить нечто подобное и постепенно покорял новые вершины, становясь уже реальным героем и совершая настоящие, а не выдуманные подвиги.</p>
-</aside></script></section><section  data-markdown><script type="text/template">**Подвиг — поступок на пределе сил.**
+<aside class="notes"><p>Мы неоднократно с тобой уже говорили о том, что семья занимает особое место в нашей судьбе. В ней мы растем и взрослеем, именно она является нашей опорой и поддержкой, именно в семье мы чаще всего черпаем свои силы и положительные эмоции.</p>
+<p>Даже если по каким-то причинам человеку не повезло с семьей, он все равно ищет ее в любых других сообществах, в которых ему хорошо и комфортно. Например, семьей может стать родной класс или любимый коллектив. Так бывает. И это, конечно, не отменяет той огромной ценности, которые имеют кровные узы.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<aside class="notes"><p>Подвиги в жизни мифических героев были признаком силы, ума, таланта и особого избранничества. Это привело к тому, что героями стали называть вполне реальных людей, обладавших, как правило, физическими сверхспособностями — выносливостью, скоростью, ловкостью, находчивостью. При этом нравственность у таких древних героев могла быть на нуле — главной была сила, а то, как именно применяет ее тот или иной герой, имело второстепенное значение.</p>
-</aside></script></section><section  data-markdown><script type="text/template">**Герою важно не столько обладать достоинствами, сколько употреблять их<br> на благо другим**.
+Человек перенимает у старших родственников манеру общения, взгляды, слова
 
-<aside class="notes"><p>Со временем героями все чаще стали называть людей, которые не просто совершают какой-то примечательный поступок, а тех, чей необычный поступок имеет очень высокую нравственную ценность. То есть <strong>герою важно не только обладать достоинствами, но и употреблять их на благо другим</strong>.</p>
-</aside></script></section><section  data-markdown><script type="text/template">#### **Сила настоящего героя**
-</script></section><section  data-markdown><script type="text/template">![Борис и Глеб](http://deduhova.ru/statesman/wp-content/uploads/2015/09/lLL3aSYA_gg.jpg)
-<small>Святые Борис и Глеб</small>
-<aside class="notes"><p>Со временем и этот подход претерпел изменения. Люди под влиянием христианства, осознали, что для того, чтобы стать героем, совсем не обязательно иметь силу физическую, а по-настоящему героические поступки требуют совершенно иных способностей, нежели быстрый бег или выносливость. 
-св. Борис и Глеб кратко. Первые русские святые, которых канонизировали в лике мучеников-страстотерпцев. Оба брата, были убиты Святополком Окаянным во время борьбы за власть.
-Проблема в том, что в человеке помимо нравственного уровня, который и делает нас людьми, есть еще один, который ученые называют инстинктами.</p>
-</aside></script></section><section  data-markdown><script type="text/template">![](https://clever-lab.pro/pluginfile.php/66053/mod_glossary/entry/149/lori-0004669915-bigwww.jpg)  
+<aside class="notes"><p>Ученые-психологи не раз проводили исследования, которые показали, что человек чаще всего поступает в жизни так, как его научили в родной семье. <strong>Он перенимает у старших</strong> родственников манеру общения, взгляды, слова, пищевые привычки и прочее — <strong>все то, с чем изо дня в день сталкивался в кругу своих близких</strong>.</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
+<img src="https://clever-lab.pro/pluginfile.php/66055/mod_glossary/entry/152/289159.b.jpg" alt="" style="object-fit: scale-down">
+</div>
 
-<aside class="notes"><p>В дикой природе у зверей, по большому счету, есть только две самые важные задачи — оставить после себя потомство и выжить в любых условиях. При этом, если для выживания животному нужно сделать что-то, что в мире людей считается плохим делом, животные совершат этот аморальный с нравственной точки зрения поступок. Например, оставят на произвол судьбы слабого детеныша, чтобы отдать всю заботу самому здоровому и развитому. Ведь в мире животных выживает сильнейший — таков суровый закон биологии.</p>
-</aside></script></section><section  data-markdown><script type="text/template">> Быть человеком — значит переступить через животный закон и уметь дарить благо другим даже тогда, когда это приносит тебе неудобство.
+<aside class="notes"><p>Конечно, чуть позже, повзрослев и создав свои собственные семьи, люди начинают смотреть на мир иначе, но главные ценности они выносят из той среды, где они выросли, где прошло их детство.</p>
+<p>Если бы не было передачи опыта между поколениями, то каждому новому поколению людей необходимо было бы заново открывать те законы, которые были открыты ранее их предшественниками. Представь, как было бы трудно первым людям изобретать каждый раз, например, колесо!</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<aside class="notes"><p>На языке нравственности творение добра вопреки своим интересам называется самопожертвованием. И именно оно лежит в основе настоящего геройства.
-Вообще-то самопожертвование имеет два уровня.</p>
-</aside></script></section><section  data-markdown><script type="text/template">![](https://clever-lab.pro/pluginfile.php/66053/mod_glossary/entry/149/lori-0034443051-bigwww.jpg)  
-<aside class="notes"><p>Первый — это привычное всем нам умение договариваться и, если нужно, уступать другим ради того, чтобы жить в одном обществе. Даже если это неудобно, человек будет исполнять общественные правила, потому что иначе общество быстро распадется. Конечно, в строгом смысле выполнение общественных норм самопожертвованием не является, тем не менее, воспитывает в человеке второй, более важный уровень самопожертвования. </p>
-<p>Он доступен нравственно развитым людям, которые очень чутко относятся к окружающим и стремятся оставить после себя как можно больше добра и света. Их желание дарить другим благо настолько велико, что они перестают думать только о своих интересах, добровольно и с радостью ограничивают себя, чтобы другому человеку сделать что-то хорошее.
-Возможно, ты сейчас удивишься, но поступаться своими желаниями ради других — не так и трудно и действительно приносит радость. Важно только иметь этот навык и тренировать его в своем сердце, побуждая себя к добрым делам.</p>
-<p>Кстати, именно поэтому какое-либо трудное доброе дело, связанное с самопожертвованием и самоотречением, по-русски называется подвигом. <strong>Творя подвиг, человек совершает нравственное движение, он как бы «отодвигает» себя</strong>, прилагает усилие, побеждает духовную лень и лишает себя удобства.</p>
-</aside></script></section><section  data-markdown><script type="text/template">#### **Героизм на войне.**
-<aside class="notes"><p>Особенно ярко самопожертвование проявляется во время войны или в других экстремальных ситуациях — стихийных бедствиях, авариях, техногенных катастрофах. Оно и понятно: когда происходит какое-то чрезвычайное событие, остается очень мало времени на принятие решений. И тогда человек предстает перед непростым выбором: либо выжить, либо спасти жизнь другого иногда даже ценой жизни собственной.</p>
-</aside></script></section><section  data-markdown><script type="text/template">![](https://clever-lab.pro/pluginfile.php/66053/mod_glossary/entry/149/lori-0041756150-bigwww.jpg)  
+<img src="https://clever-lab.pro/pluginfile.php/66051/mod_glossary/entry/148/lori-0038620829-bigwww.jpg" alt="" style="object-fit: scale-down">
+</div>
 
-<aside class="notes"><p>Примером героизма на войне являются многочисленные случаи, когда кто-то заслонил собой вражеский пулемет или бросался с гранатой на танк, или таранил своим самолетом самолет противника.
-Отдельная тема — работа мирных людей, которые помогали своим защитникам. Они не покладая рук от мала до велика работали на оружейных заводах, рыли окопы, возводили оборонительные сооружения. Таких случаев — бесчисленное множество, и происходили они на нашей земле во время всех войн, когда мы защищали Родину от захватчиков.
-Конечно, солдат должен уметь воевать, и ничего удивительного вроде бы нет в том, что он уничтожает врага. Но согласись: одно дело — стрелять из окопа или идти в наступление в строю своих сослуживцев, под защитой танков и пушек, и совсем другое дело — идти на врага в одиночку, без защиты, понимая, что при любом исходе ты все равно погибнешь. Чувствуешь разницу? Пойти на такое может лишь тот, кому дорога родная земля, кто горячо любит свой народ и стремится сделать все, чтобы его родные и близкие были в безопасности.</p>
-</aside></script></section><section  data-markdown><script type="text/template">### **Свидетельство любви.**
+<aside class="notes"><p>Cейчас, когда существует целое море книг, а информация легко доступна каждому, <strong>передача опыта, ценностей, взглядов и знаний остается одной из главных миссий человека</strong>. Эта миссия есть и у тебя. Поэтому очень важно знать о своих предках как можно больше — дабы все хорошее, светлое и доброе, что они носили в своих сердцах, не ушло в небытие, а осталось в памяти следующих поколений.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<aside class="notes"><p>Здесь мы подошли к одному очень важному моменту. Оказывается, <strong>теми, кто совершает подвиги, движет то чувство, которое мы называем любовью</strong>. И это чувство движет нами и во время войны, и во время мира. </p>
-<p>Только из любви к Родине можно бесстрашно пойти на врага, который многочисленнее и сильнее тебя.</p>
-<p>Только из любви к страдающим больным можно забыть об усталости и несколько дней напролет стоять у операционного стола — как это делают многие хирурги, которые спасают жизни своим пациентам.</p>
-<p>Только любовь помогает тысячам волонтеров выдерживать зной и стужу и дежурить на вокзалах, раздавая еду бездомным и нищим.</p>
-</aside></script></section><section  data-markdown><script type="text/template">
-![](https://clever-lab.pro/pluginfile.php/66053/mod_glossary/entry/149/lori-0003220854-bigwww.jpg)  
+**Рассказ родителей о семье:**
+1. отнестись со вниманием,
+2. расспросить о подробностях, 
+3. записать.
 
-<aside class="notes"><p>Только любовь помогает родным терпеть лишения и ухаживать за тяжелобольным человеком, который живет вместе с ними.</p>
-</aside></script></section><sectioт><img src="img/roman-kogodovskij.jpg" alt="">
-<aside class="notes"><p>Только любовь помогла 12-летнему Роме Когодовскому броситься в пылающий дом и вытащить оттуда младшего брата (<a href="https://kartageroev.ru/roman-kogodovskij">ссылка</a>).</p>
-</aside></script></section><section  data-markdown><script type="text/template">![Каратепян Шаварш](https://kartageroev.ru/assets/images/%D0%A8%D0%B0%D0%B2%D0%B0%D1%80%D1%88%20%D0%9A%D0%B0%D1%80%D0%B0%D0%BF%D0%B5%D1%82%D1%8F%D0%BD%202.jpg)
+<aside class="notes"><p><strong>Семейная история.</strong>
+Наша задача будет подготовить рассказ о своей семье. В шестом классе мы проводили урок посвящённый подвигу и увидели, что человеку нужно иметь перед собой образы, к чему стремиться. </p>
+<p>Наверняка кто-то из старших рассказывал тебе о том, какими были твои родители в детстве, или ты знаешь интересные истории о своих близких родственниках: откуда они родом, чем занимались их предки, о чем мечтали, чего хотели достичь. Вспомни теперь какую-нибудь из этих историй и вкратце перескажи ее. Теперь подумай, что именно тебя привлекло в ней. Еще тебе стоит задуматься — на кого из этой истории ты хотел бы быть похожим и почему?</p>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
 
-<aside class="notes"><p>Только любовь позволила спортсмену Шаваршу Карапетяну вытащить из упавшего с моста в воду троллейбуса 46 утонувших пассажиров, 20 из которых врачам удалось вернуть к жизни. После этого сам Шаварш Карапетян стал инвалидом и завершил спортивную карьеру, но ни разу не пожалел о своем поступке, потому что эта цена была заплачена за спасение жизни (<a href="https://kartageroev.ru/shavarsh-karapetyan">ссылка</a>). В 2014 году российская компания Logos Film Company начала заниматься разработкой фильма о Шаварше Карапетяне. Фильм получил название «20 жизней» — по числу спасенных людей.</p>
-</aside></script></section><section  data-markdown><script type="text/template">Быть героем — значит быть человеком и каждый день поступать по любви, не жалея своих сил для счастья других. 
+**В рассказе о семье важна любая мелочь, Если внимательно слушать, можно очень многое узнать о человеке.**
+</div>
 
-<aside class="notes"><p>За этот ежедневный труд обычно не дают медалей — людей, к сожалению, привлекают лишь яркие и из ряда вон выходящие события. Но, тем не менее, эти подвиги важны и значимы, поскольку именно они являются тем основанием, на котором стоит все наше человеческое общество.</p>
-<p><em>Материалы, представленные в разделе, являются интеллектуальной собственностью «Клевер Лаборатории», активная гиперссылка на источник обязательна.</em></p>
-<p>» <a href="https://clever-lab.pro/mod/glossary/view.php?g=9">Учебный текст к уроку ОДНКНР для 6 класса</a></p>
-</aside></script></section></div>
+<aside class="notes"><p>В рассказе о семье важна любая мелочь. Если внимательно относиться к мелочам, то можно очень многое узнать о человеке. Особенно это важно в том случае, когда ты берешь с него пример. Даже то, какие продукты любили есть твои предки, может рассказать о них много интересного и косвенно указать на их достаток, здоровье и даже нравственные ценности! А ведь <strong>ценности — это то, что передается от поколения к поколению в первую очередь</strong>.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://clever-lab.pro/pluginfile.php/66051/mod_glossary/entry/148/lori-0028303434-bigwww.jpg" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Например, я знаю, что моя бабушка работала крановщицей — управляла огромным механизмом, который ездит по цеху и поднимает тяжелые грузы. Это говорит о том, что она волевой человек, умеющий быстро принимать решение и не бояться грохота стального гиганта и лязга тяжелых цепей. Крановщики — очень выносливы, ведь работать им нужно на большой высоте, под шум механизмов и с постоянными сквозняками. Она рано ушла на пенсию, поскольку трудно работать в таких условиях долго. По закону отпускает таких людей отпускают на отдых раньше, чем других работников. Сейчас, она тоже не сидит без дела — решительный характер и привычка трудиться, как правило, выводят таких людей на дачи и огороды. Дома чаще всего именно на таких людях лежит забота о порядке и чистоте. Вероятно, что эти качества — волю, целеустремленность, трудолюбие — должны наследовать и потомки этой сильной бабушки.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### **О чем расскажут вещи <br> (фотографии, книги, письма)?**
+</div>
+
+<aside class="notes"><p>Прекрасным дополнением к рассказу о семье могут стать разные вещи, которые принадлежали твоим предкам, либо которыми пользуются те, кто живет вместе с тобой.
+Изучение вещей может дать много информации об их хозяевах. Например, если в гардеробе твоего дедушки много поношенных пиджаков, брюк, рубашек и галстуков, это значит, что он часто пользовался ими.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://clever-lab.pro/pluginfile.php/66051/mod_glossary/entry/148/lori-0040473650-bigwww.jpg" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Обычно такая одежда используется людьми, которые ведут активный деловой образ жизни. Ее носят учителя, инженеры, руководители, работники искусства — люди, которым часто приходится общаться с другими и при этом иметь соответствующий строгий и опрятный вид. Продолжите рассказ.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="6/include/731439208.jpg" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Не менее интересным источником о ценностях семьи может стать и ваша библиотека. Даже сейчас, когда множество текстов можно найти в интернете и при этом не покупать книг, газет и журналов, почти в каждом доме найдётся что-нибудь распечатанное на бумаге. Что это будет — научная литература или энциклопедии, небольшие веселые книжки или огромные собрания романов известных писателей, красочные детские журналы или папки с чертежами и таблицами? Как правило, книги и альбомы по искусству стоят на полках у людей с развитым художественным вкусом, а, скажем, романы известных авторов прошлого любят читать те, кто часто задумывается о смысле жизни, внимателен к окружающему миру.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://clever-lab.pro/pluginfile.php/66051/mod_glossary/entry/148/lori-0005492699-bigwww.jpg" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Фотографии — особая история. С одной стороны, на них сами по себе зафиксированы яркие моменты жизни. А с другой стороны, эти изображения могут тоже рассказать немало интересного о тех, кто на них запечатлен. 
+Вот трое мужчин в военной форме. Они сосредоточенно спокойны. Скоро они вернутся из армии и начнут обычную гражданскую жизнь. Судя по качеству изображения, фото сделано давно. Зная порядки, которые были в то время в армии, можно говорить, что перед нами - патриоты Родины, честные и мужественные воины, любящие свою землю. Скоро они встретят девушек и создадут крепкие счастливые семьи. И своим детям молодые родители передадут эту верность — Родине, долгу, друг другу.</p>
+</aside></script></section><section  data-markdown><script type="text/template"></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="https://clever-lab.pro/pluginfile.php/66051/mod_glossary/entry/148/lori-0001642829-bigwww.jpg" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>На фотографиях могут быть также запечатлены различные традиции — например, совместное празднование Нового года, походы в кино и другие моменты проведенного вместе времени.
+Кстати, общие праздники и дела — это тоже про традицию. Человек не может существовать отдельно от других людей, поэтому в совместной деятельности, может родиться подлинная человеческая жизнь — дружба, понимание, взаимопомощь, поддержка и любовь…</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+**Общее дело — лучший <br>способ передачи опыта.**
+</div>
+
+<aside class="notes"><p>Общее дело — самый лучший способ передачи опыта, когда он передается не через книги или видеозаписи, а напрямую, живым словом, примером и даже взглядом. И именно поэтому семья — это наиболее предпочтительная среда, в которой лучше всего выполняется наша главная миссия.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Материалы, являются интеллектуальной собственностью «Клевер Лаборатории».<br> [Учебный текст к уроку ОДНКНР для 5 класса](https://clever-lab.pro/mod/glossary/view.php?g=8)
+</div></script></section><section  data-markdown><script type="text/template"></script></section></div>
     </div>
 
-    <script src="./dist/reveal.js"></script>
+    <script src="dist/reveal.js"></script>
 
-    <script src="./plugin/markdown/markdown.js"></script>
-    <script src="./plugin/highlight/highlight.js"></script>
-    <script src="./plugin/zoom/zoom.js"></script>
-    <script src="./plugin/notes/notes.js"></script>
-    <script src="./plugin/math/math.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+
     <script>
       function extend() {
         var target = {};
@@ -104,6 +226,30 @@
         return target;
       }
 
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
       // default options to init reveal.js
       var defaultOptions = {
         controls: true,
@@ -111,25 +257,60 @@
         history: true,
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
-        slideNumber: true,
         plugins: [
           RevealMarkdown,
           RevealHighlight,
           RevealZoom,
           RevealNotes,
-          RevealMath
-        ]
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
       };
 
       // options from URL query string
       var queryOptions = Reveal().getQueryHash() || {};
 
-      var options = extend(defaultOptions, {}, queryOptions);
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"transition":"zoom","transitionSpeed":"normal"}, queryOptions);
     </script>
-
 
     <script>
       Reveal.initialize(options);
     </script>
   </body>
+
+  <!-- created with Advanced Slides -->
 </html>
